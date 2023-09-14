@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Randomizador</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <button id="randomizeButton">Randomizar</button>
+    <p id="randomNumber"></p>
+
+    <script>
+        // Selecionar o botão e o elemento de exibição do número aleatório
+        const randomizeButton = document.getElementById("randomizeButton");
+        const randomNumberElement = document.getElementById("randomNumber");
+
+        // Adicionar um ouvinte de evento de clique ao botão
+        randomizeButton.addEventListener("click", function () {
+            // Gerar um número aleatório entre 1 e 100 (você pode ajustar os limites)
+            const randomValue = Math.floor(Math.random() * 100) + 1;
+            
+            // Exibir o número aleatório no elemento de exibição
+            randomNumberElement.textContent = `Número Aleatório: ${randomValue}`;
+        });
+    </script>
+</body>
+</html>
